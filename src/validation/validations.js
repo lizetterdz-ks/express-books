@@ -30,7 +30,7 @@ const validateNew = checkSchema({
             errorMessage: 'Year is missing!!!'
         },
         isInt: {
-            options: { min: 1455, max: 2021 }
+            options: { min: 1455, max: new Date().getFullYear() }
         },
         isNumeric: {
             options: {no_symbols: true}
@@ -80,7 +80,7 @@ const validateUpdate = checkSchema({
             options: true
         },
         isInt: {
-            options: { min: 1455, max: 2021 }
+            options: { min: 1455, max: new Date().getFullYear() }
         },
         isNumeric: {
             options: {no_symbols: true}
