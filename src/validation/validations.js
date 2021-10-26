@@ -11,7 +11,8 @@ const validateNew = checkSchema({
         isLength: {
             options: { min: 1 },
         },
-        errorMessage: 'Title is invalid!!!'
+        errorMessage: 'Title is invalid!!!',
+        trim: true
     },
     author: {
         exists: {
@@ -22,7 +23,8 @@ const validateNew = checkSchema({
         isLength: {
             options: { min: 1 },
         },
-        errorMessage: 'Author name is invalid!!!'
+        errorMessage: 'Author name is invalid!!!',
+        trim: true
     },
     year: {
         exists: {
@@ -37,13 +39,14 @@ const validateNew = checkSchema({
         },
         errorMessage: 'Year is invalid!!!',
         toInt: true,
+        trim: true
     }
 })
 
 function duplicated(req,res,next){
     let book; 
     Book.getAll((books)=> {
-        book = (books.find(ent => (ent.title === req.body.title && ent.author === req.body.author && ent.year === req.body.year) ? false : true ));
+        book = books.find(ent => ent.title === req.body.title) && books.find(ent => ent.author === req.body.author) && books.find(ent => ent.year === req.body.year)? false : true;
         if (book){ 
             next();
         } else {
@@ -63,7 +66,8 @@ const validateUpdate = checkSchema({
         isLength: {
             options: { min: 1 },
         },
-        errorMessage: 'Title is invalid!!!'
+        errorMessage: 'Title is invalid!!!',
+        trim: true
     },
     author: {
         optional: {
@@ -73,7 +77,8 @@ const validateUpdate = checkSchema({
         isLength: {
             options: { min: 1 },
         },
-        errorMessage: 'Author name is invalid!!!'
+        errorMessage: 'Author name is invalid!!!',
+        trim: true
     },
     year: {
         optional: {
@@ -87,6 +92,7 @@ const validateUpdate = checkSchema({
         },
         errorMessage: 'Year is invalid!!!',
         toInt: true,
+        trim: true
     },
 });
 
