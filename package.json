@@ -4,6 +4,7 @@
   "description": "Database server for registering books with title, author and year",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js"
   },
