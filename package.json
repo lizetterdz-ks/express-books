@@ -1,7 +1,7 @@
 {
   "name": "expressexercise",
   "version": "1.0.0",
-  "description": "",
+  "description": "Database server for registering books with title, author and year",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,5 +17,13 @@
   "devDependencies": {
     "nodemon": "^2.0.14"
   },
-  "keywords": []
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizetterdz-ks/express-books.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lizetterdz-ks/express-books/issues"
+  },
+  "homepage": "https://github.com/lizetterdz-ks/express-books#readme"
 }
